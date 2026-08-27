@@ -1,119 +1,274 @@
 <div id="sp-creator-studio" class="spcs">
 
+    <!-- HEADER -->
     <div class="spcs-header">
-        <div class="spcs-badge">⚡ LOCAL AI</div>
 
-        <h2>Creator Studio</h2>
+        <div class="spcs-badge">
+            ⚡ CREATOR STUDIO
+        </div>
+
+        <h2>
+            Create better content.<br>
+            No AI download required.
+        </h2>
 
         <p>
             Generate social media content directly in your browser.
-            Your content stays on your device.
+            Start instantly, or optionally use Local AI for advanced generation.
         </p>
 
         <div class="spcs-privacy">
-            🔒 No API key &nbsp;•&nbsp; No server AI &nbsp;•&nbsp; Local processing
+            🔒 Instant Mode requires no API key, no account and no model download.
         </div>
+
     </div>
 
-    <!-- MODEL STATUS -->
-    <div class="spcs-model-card">
+
+    <!-- AI MODE CARD -->
+    <div class="spcs-model-card spcs-mode-card">
 
         <div class="spcs-model-info">
-            <div class="spcs-model-icon">🧠</div>
+
+            <div class="spcs-model-icon">
+                ⚡
+            </div>
 
             <div>
-                <strong>Local AI Model</strong>
+
+                <strong>
+                    Creator AI
+                </strong>
+
                 <span id="spcs-model-status">
-                    Model not loaded
+                    Instant Mode — ready to use
                 </span>
+
             </div>
+
         </div>
 
-        <div class="spcs-model-actions">
+
+        <!-- MODE SELECTOR -->
+        <div class="spcs-mode-selector">
+
+            <button
+                type="button"
+                id="spcs-mode-instant"
+                class="spcs-mode-btn active">
+
+                ⚡ Instant
+
+            </button>
+
+
+            <button
+                type="button"
+                id="spcs-mode-local"
+                class="spcs-mode-btn">
+
+                🧠 Local AI
+
+            </button>
+
+        </div>
+
+
+        <!-- LOCAL AI -->
+        <div
+            id="spcs-local-ai-panel"
+            class="spcs-local-ai-panel"
+            style="display:none;">
+
+            <div class="spcs-local-info">
+
+                <strong>
+                    🧠 Optional Local AI
+                </strong>
+
+                <p>
+                    Use an AI model directly on your device
+                    for more advanced content generation.
+                    The model must be downloaded before first use.
+                </p>
+
+            </div>
+
+
             <button
                 type="button"
                 id="spcs-load-model"
                 class="spcs-btn spcs-btn-secondary">
+
                 Load Local AI
+
             </button>
-        </div>
 
-        <div
-            id="spcs-progress-wrapper"
-            class="spcs-progress-wrapper"
-            style="display:none;">
 
-            <div class="spcs-progress-top">
-                <span id="spcs-progress-text">
-                    Preparing AI model...
-                </span>
+            <!-- PROGRESS -->
+            <div
+                id="spcs-progress-wrapper"
+                class="spcs-progress-wrapper"
+                style="display:none;">
 
-                <span id="spcs-progress-percent">
-                    0%
-                </span>
+                <div class="spcs-progress-top">
+
+                    <span id="spcs-progress-text">
+                        Preparing AI model...
+                    </span>
+
+                    <span id="spcs-progress-percent">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="spcs-progress">
+
+                    <div
+                        id="spcs-progress-bar">
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="spcs-progress">
-                <div id="spcs-progress-bar"></div>
-            </div>
         </div>
 
     </div>
 
-    <!-- MAIN INPUT -->
+
+    <!-- MAIN GRID -->
     <div class="spcs-grid">
 
-        <div class="spcs-panel">
 
-            <h3>🎯 Create Content</h3>
+        <!-- INPUT PANEL -->
+        <div class="spcs-panel spcs-create-panel">
 
+            <div class="spcs-panel-heading">
+
+                <div class="spcs-panel-heading-icon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <h3>
+                        Create Content
+                    </h3>
+
+                    <p>
+                        Tell us what you want to publish.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLATFORM -->
             <label for="spcs-platform">
                 Platform
             </label>
 
             <select id="spcs-platform">
-                <option value="Instagram">Instagram</option>
-                <option value="TikTok">TikTok</option>
-                <option value="YouTube Shorts">YouTube Shorts</option>
-                <option value="LinkedIn">LinkedIn</option>
-                <option value="X">X / Twitter</option>
+
+                <option value="Instagram">
+                    Instagram
+                </option>
+
+                <option value="TikTok">
+                    TikTok
+                </option>
+
+                <option value="YouTube Shorts">
+                    YouTube Shorts
+                </option>
+
+                <option value="LinkedIn">
+                    LinkedIn
+                </option>
+
+                <option value="X">
+                    X / Twitter
+                </option>
+
             </select>
 
 
+            <!-- CONTENT TYPE -->
             <label for="spcs-content-type">
                 Content type
             </label>
 
             <select id="spcs-content-type">
-                <option value="Post">Social Post</option>
-                <option value="Reel">Reel / Short</option>
-                <option value="Story">Story</option>
-                <option value="Carousel">Carousel</option>
-                <option value="Video">Video</option>
+
+                <option value="Post">
+                    Social Post
+                </option>
+
+                <option value="Reel">
+                    Reel / Short
+                </option>
+
+                <option value="Story">
+                    Story
+                </option>
+
+                <option value="Carousel">
+                    Carousel
+                </option>
+
+                <option value="Video">
+                    Video
+                </option>
+
             </select>
 
 
+            <!-- GOAL -->
             <label for="spcs-goal">
                 Goal
             </label>
 
             <select id="spcs-goal">
-                <option value="Engagement">Increase engagement</option>
-                <option value="Reach">Increase reach</option>
-                <option value="Followers">Gain followers</option>
-                <option value="Sales">Generate sales</option>
-                <option value="Education">Educate the audience</option>
-                <option value="Brand awareness">Build brand awareness</option>
+
+                <option value="Engagement">
+                    Increase engagement
+                </option>
+
+                <option value="Reach">
+                    Increase reach
+                </option>
+
+                <option value="Followers">
+                    Gain followers
+                </option>
+
+                <option value="Sales">
+                    Generate sales
+                </option>
+
+                <option value="Education">
+                    Educate the audience
+                </option>
+
+                <option value="Brand awareness">
+                    Build brand awareness
+                </option>
+
             </select>
 
 
+            <!-- TONE -->
             <label for="spcs-tone">
                 Tone
             </label>
 
             <select id="spcs-tone">
+
                 <option value="Natural and authentic">
-                    Natural & authentic
+                    Natural &amp; authentic
                 </option>
 
                 <option value="Professional">
@@ -121,11 +276,11 @@
                 </option>
 
                 <option value="Friendly and conversational">
-                    Friendly & conversational
+                    Friendly &amp; conversational
                 </option>
 
                 <option value="Energetic and viral">
-                    Energetic & viral
+                    Energetic &amp; viral
                 </option>
 
                 <option value="Educational">
@@ -139,9 +294,11 @@
                 <option value="Funny">
                     Funny
                 </option>
+
             </select>
 
 
+            <!-- TOPIC -->
             <label for="spcs-topic">
                 What are you publishing?
             </label>
@@ -152,6 +309,12 @@
                 placeholder="Describe the photo, video, product, topic or idea you want to publish..."></textarea>
 
 
+            <div class="spcs-input-hint">
+                💡 The more context you provide, the better the result.
+            </div>
+
+
+            <!-- CREATOR STYLE -->
             <label for="spcs-style">
                 Optional creator style
             </label>
@@ -162,25 +325,49 @@
                 placeholder="Example: short sentences, Italian, ironic, uses emojis sparingly..."></textarea>
 
 
+            <!-- GENERATE -->
             <button
                 type="button"
                 id="spcs-generate"
-                class="spcs-btn spcs-btn-primary"
-                disabled>
+                class="spcs-btn spcs-btn-primary">
 
                 ✨ Generate Content
 
             </button>
 
+
+            <div class="spcs-generate-note">
+                ⚡ Instant Mode works immediately without downloading an AI model.
+            </div>
+
         </div>
 
 
-        <!-- RESULTS -->
+        <!-- RESULTS PANEL -->
         <div class="spcs-panel spcs-results">
 
             <div class="spcs-results-header">
 
-                <h3>✨ Generated Content</h3>
+                <div class="spcs-panel-heading">
+
+                    <div class="spcs-panel-heading-icon">
+                        ✨
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Generated Content
+                        </h3>
+
+                        <p>
+                            Ready to copy and publish.
+                        </p>
+
+                    </div>
+
+                </div>
+
 
                 <button
                     type="button"
@@ -194,6 +381,7 @@
             </div>
 
 
+            <!-- HOOK -->
             <div class="spcs-result-card">
 
                 <div class="spcs-result-title">
@@ -203,7 +391,9 @@
                 <div
                     id="spcs-hook"
                     class="spcs-result-content">
+
                     Your hook will appear here.
+
                 </div>
 
                 <button
@@ -218,6 +408,7 @@
             </div>
 
 
+            <!-- CAPTION -->
             <div class="spcs-result-card">
 
                 <div class="spcs-result-title">
@@ -227,7 +418,9 @@
                 <div
                     id="spcs-caption"
                     class="spcs-result-content">
+
                     Your caption will appear here.
+
                 </div>
 
                 <button
@@ -242,6 +435,7 @@
             </div>
 
 
+            <!-- CTA -->
             <div class="spcs-result-card">
 
                 <div class="spcs-result-title">
@@ -251,7 +445,9 @@
                 <div
                     id="spcs-cta"
                     class="spcs-result-content">
+
                     Your call to action will appear here.
+
                 </div>
 
                 <button
@@ -266,6 +462,7 @@
             </div>
 
 
+            <!-- HASHTAGS -->
             <div class="spcs-result-card">
 
                 <div class="spcs-result-title">
@@ -275,7 +472,9 @@
                 <div
                     id="spcs-hashtags"
                     class="spcs-result-content">
+
                     Your hashtags will appear here.
+
                 </div>
 
                 <button
@@ -290,6 +489,7 @@
             </div>
 
 
+            <!-- ERROR -->
             <div
                 id="spcs-error"
                 class="spcs-error"
@@ -301,11 +501,16 @@
     </div>
 
 
+    <!-- FOOTER -->
     <div class="spcs-footer">
 
-        <span>🔒 Your content is processed locally in your browser.</span>
+        <span>
+            🔒 Instant Mode runs directly in your browser.
+        </span>
 
-        <span>Powered by WebLLM</span>
+        <span>
+            ShortPrompt Creator Studio
+        </span>
 
     </div>
 
@@ -314,85 +519,143 @@
 
 <style>
 
+/* =====================================================
+   SHORTPROMPT CREATOR STUDIO
+   ===================================================== */
+
 #sp-creator-studio.spcs {
 
     --sp-bg: #0f172a;
     --sp-card: #1e293b;
-    --sp-card-2: #111827;
+    --sp-card-dark: #020617;
+
     --sp-border: #334155;
+
     --sp-text: #f8fafc;
     --sp-muted: #94a3b8;
+
     --sp-purple: #a855f7;
+    --sp-purple-light: #c084fc;
+
     --sp-pink: #ec4899;
+
     --sp-green: #22c55e;
 
+    width: 100%;
     max-width: 1100px;
+
     margin: 30px auto;
-    padding: 22px;
+    padding: 24px;
 
     background:
         radial-gradient(
-            circle at top right,
-            rgba(168,85,247,.12),
-            transparent 35%
+            circle at 100% 0%,
+            rgba(168, 85, 247, .14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(236, 72, 153, .07),
+            transparent 30%
         ),
         var(--sp-bg);
 
     color: var(--sp-text);
 
     border: 1px solid var(--sp-border);
-    border-radius: 18px;
+
+    border-radius: 20px;
 
     font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         Roboto,
+        Helvetica,
+        Arial,
         sans-serif;
 
     box-sizing: border-box;
+
+    overflow: hidden;
+
 }
+
+
+/* =====================================================
+   GLOBAL
+   ===================================================== */
 
 #sp-creator-studio.spcs *,
 #sp-creator-studio.spcs *::before,
 #sp-creator-studio.spcs *::after {
+
     box-sizing: border-box;
+
 }
 
 
-/* HEADER */
+/* =====================================================
+   HEADER
+   ===================================================== */
 
 .spcs-header {
+
     text-align: center;
-    padding: 12px 8px 25px;
+
+    padding:
+        12px
+        10px
+        28px;
+
 }
+
 
 .spcs-badge {
-    display: inline-block;
 
-    padding: 6px 12px;
+    display: inline-flex;
 
-    border-radius: 20px;
+    align-items: center;
 
-    background: rgba(168,85,247,.12);
+    justify-content: center;
 
-    border: 1px solid rgba(168,85,247,.35);
+    padding:
+        6px
+        12px;
 
-    color: #c084fc;
+    border-radius: 999px;
+
+    background:
+        rgba(168, 85, 247, .12);
+
+    border:
+        1px solid
+        rgba(168, 85, 247, .35);
+
+    color:
+        var(--sp-purple-light);
 
     font-size: 11px;
+
     font-weight: 800;
 
-    letter-spacing: .5px;
+    letter-spacing: .7px;
+
 }
+
 
 .spcs-header h2 {
 
-    margin: 12px 0 8px;
+    margin:
+        14px
+        0
+        10px;
 
-    font-size: 32px;
+    font-size: 34px;
 
-    line-height: 1.15;
+    line-height: 1.12;
+
+    letter-spacing: -.7px;
 
     background:
         linear-gradient(
@@ -405,46 +668,71 @@
     background-clip: text;
 
     color: transparent;
+
 }
+
 
 .spcs-header p {
 
-    max-width: 650px;
+    max-width: 680px;
 
-    margin: auto;
+    margin:
+        0
+        auto;
 
-    color: var(--sp-muted);
+    color:
+        var(--sp-muted);
 
     font-size: 15px;
 
-    line-height: 1.6;
+    line-height: 1.65;
+
 }
+
 
 .spcs-privacy {
 
-    margin-top: 12px;
+    display: inline-block;
+
+    margin-top: 14px;
+
+    padding:
+        6px
+        10px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(34, 197, 94, .07);
 
     color: #86efac;
 
-    font-size: 12px;
+    font-size: 11px;
 
 }
 
 
-/* MODEL */
+/* =====================================================
+   MODEL / MODE CARD
+   ===================================================== */
 
 .spcs-model-card {
 
-    padding: 16px;
-
-    background: rgba(30,41,59,.8);
-
-    border: 1px solid var(--sp-border);
-
-    border-radius: 12px;
+    padding: 17px;
 
     margin-bottom: 18px;
+
+    background:
+        rgba(30, 41, 59, .82);
+
+    border:
+        1px solid
+        var(--sp-border);
+
+    border-radius: 14px;
+
 }
+
 
 .spcs-model-info {
 
@@ -453,24 +741,38 @@
     align-items: center;
 
     gap: 12px;
+
 }
+
 
 .spcs-model-icon {
 
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
+
+    flex:
+        0
+        0
+        44px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
-    background: #020617;
+    background:
+        #020617;
+
+    border:
+        1px solid
+        var(--sp-border);
 
     font-size: 20px;
+
 }
+
 
 .spcs-model-info strong {
 
@@ -478,7 +780,10 @@
 
     font-size: 14px;
 
+    line-height: 1.3;
+
 }
+
 
 .spcs-model-info span {
 
@@ -486,39 +791,199 @@
 
     margin-top: 3px;
 
-    color: var(--sp-muted);
+    color:
+        var(--sp-muted);
 
     font-size: 12px;
 
-}
+    line-height: 1.4;
 
-.spcs-model-actions {
-
-    margin-top: 14px;
 }
 
 
-/* PROGRESS */
+/* =====================================================
+   MODE SELECTOR
+   ===================================================== */
 
-.spcs-progress-wrapper {
+.spcs-mode-selector {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 8px;
 
     margin-top: 15px;
 
 }
 
-.spcs-progress-top {
 
-    display: flex;
+.spcs-mode-btn {
 
-    justify-content: space-between;
+    min-height: 42px;
 
-    margin-bottom: 7px;
+    border:
+        1px solid
+        var(--sp-border);
 
-    color: var(--sp-muted);
+    background:
+        #020617;
+
+    color:
+        var(--sp-muted);
+
+    border-radius: 9px;
+
+    padding:
+        9px
+        12px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        border-color .15s ease,
+        color .15s ease,
+        transform .15s ease;
+
+}
+
+
+.spcs-mode-btn:hover {
+
+    border-color:
+        var(--sp-purple);
+
+    color:
+        #e2e8f0;
+
+}
+
+
+.spcs-mode-btn:active {
+
+    transform:
+        scale(.98);
+
+}
+
+
+.spcs-mode-btn.active {
+
+    background:
+        rgba(168, 85, 247, .14);
+
+    border-color:
+        var(--sp-purple);
+
+    color:
+        #e9d5ff;
+
+}
+
+
+/* =====================================================
+   LOCAL AI
+   ===================================================== */
+
+.spcs-local-ai-panel {
+
+    margin-top: 14px;
+
+}
+
+
+.spcs-local-info {
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    background:
+        #020617;
+
+    border:
+        1px solid
+        var(--sp-border);
+
+}
+
+
+.spcs-local-info strong {
+
+    display: block;
+
+    color:
+        #e2e8f0;
 
     font-size: 12px;
 
 }
+
+
+.spcs-local-info p {
+
+    margin:
+        6px
+        0
+        0;
+
+    color:
+        var(--sp-muted);
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+}
+
+
+.spcs-local-ai-panel
+.spcs-btn-secondary {
+
+    margin-top: 11px;
+
+}
+
+
+/* =====================================================
+   PROGRESS
+   ===================================================== */
+
+.spcs-progress-wrapper {
+
+    margin-top: 14px;
+
+}
+
+
+.spcs-progress-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--sp-muted);
+
+    font-size: 11px;
+
+}
+
 
 .spcs-progress {
 
@@ -528,10 +993,13 @@
 
     overflow: hidden;
 
-    border-radius: 10px;
+    border-radius: 99px;
 
-    background: #020617;
+    background:
+        #020617;
+
 }
+
 
 #spcs-progress-bar {
 
@@ -548,12 +1016,15 @@
             var(--sp-pink)
         );
 
-    transition: width .2s ease;
+    transition:
+        width .2s ease;
 
 }
 
 
-/* GRID */
+/* =====================================================
+   MAIN GRID
+   ===================================================== */
 
 .spcs-grid {
 
@@ -568,37 +1039,114 @@
 }
 
 
-/* PANELS */
+/* =====================================================
+   PANELS
+   ===================================================== */
 
 .spcs-panel {
 
-    background: rgba(30,41,59,.85);
+    min-width: 0;
 
-    border: 1px solid var(--sp-border);
+    padding: 20px;
+
+    background:
+        rgba(30, 41, 59, .84);
+
+    border:
+        1px solid
+        var(--sp-border);
 
     border-radius: 14px;
 
-    padding: 20px;
 }
+
+
+/* =====================================================
+   PANEL HEADER
+   ===================================================== */
+
+.spcs-panel-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.spcs-panel-heading-icon {
+
+    width: 34px;
+    height: 34px;
+
+    flex:
+        0
+        0
+        34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        #020617;
+
+    border:
+        1px solid
+        var(--sp-border);
+
+    font-size: 15px;
+
+}
+
 
 .spcs-panel h3 {
 
-    margin: 0 0 18px;
+    margin:
+        0;
 
     font-size: 17px;
+
+    line-height: 1.3;
 
 }
 
 
-/* INPUTS */
+.spcs-panel-heading p {
+
+    margin:
+        3px
+        0
+        0;
+
+    color:
+        var(--sp-muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
 
 .spcs-panel label {
 
     display: block;
 
-    margin: 14px 0 6px;
+    margin:
+        16px
+        0
+        6px;
 
-    color: #cbd5e1;
+    color:
+        #cbd5e1;
 
     font-size: 12px;
 
@@ -606,20 +1154,23 @@
 
 }
 
+
 .spcs-panel select,
 .spcs-panel textarea {
 
     width: 100%;
 
-    padding: 11px 12px;
+    border:
+        1px solid
+        var(--sp-border);
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    border: 1px solid var(--sp-border);
+    background:
+        #020617;
 
-    background: #020617;
-
-    color: var(--sp-text);
+    color:
+        var(--sp-text);
 
     font-family: inherit;
 
@@ -627,70 +1178,147 @@
 
     outline: none;
 
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease;
+
 }
+
+
+.spcs-panel select {
+
+    min-height: 44px;
+
+    padding:
+        10px
+        12px;
+
+}
+
 
 .spcs-panel textarea {
 
+    min-height: 84px;
+
+    padding:
+        11px
+        12px;
+
     resize: vertical;
 
-    min-height: 80px;
+    line-height: 1.5;
 
 }
+
 
 .spcs-panel select:focus,
 .spcs-panel textarea:focus {
 
-    border-color: var(--sp-purple);
+    border-color:
+        var(--sp-purple);
 
     box-shadow:
-        0 0 0 2px rgba(168,85,247,.12);
+        0 0 0 3px
+        rgba(168, 85, 247, .10);
 
 }
 
 
-/* BUTTONS */
+.spcs-panel textarea::placeholder {
+
+    color:
+        #64748b;
+
+}
+
+
+/* =====================================================
+   INPUT HINT
+   ===================================================== */
+
+.spcs-input-hint {
+
+    margin-top: 6px;
+
+    color:
+        #64748b;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
 
 .spcs-btn {
 
     width: 100%;
 
+    min-height: 45px;
+
     border: 0;
 
     border-radius: 9px;
 
-    padding: 13px 16px;
+    padding:
+        12px
+        16px;
 
-    font-size: 14px;
+    font-family: inherit;
+
+    font-size: 13px;
 
     font-weight: 800;
 
     cursor: pointer;
 
     transition:
-        transform .15s,
-        opacity .15s;
+        transform .15s ease,
+        opacity .15s ease,
+        filter .15s ease;
 
 }
+
 
 .spcs-btn:hover:not(:disabled) {
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
+
+    filter:
+        brightness(1.06);
 
 }
+
+
+.spcs-btn:active:not(:disabled) {
+
+    transform:
+        translateY(0);
+
+}
+
 
 .spcs-btn:disabled {
 
     opacity: .45;
 
-    cursor: not-allowed;
+    cursor:
+        not-allowed;
 
 }
+
 
 .spcs-btn-primary {
 
     margin-top: 18px;
 
-    color: #fff;
+    color:
+        #fff;
 
     background:
         linear-gradient(
@@ -699,18 +1327,47 @@
             var(--sp-pink)
         );
 
+    box-shadow:
+        0 7px 20px
+        rgba(168, 85, 247, .16);
+
 }
+
 
 .spcs-btn-secondary {
 
-    background: #334155;
+    background:
+        #334155;
 
-    color: #fff;
+    color:
+        #fff;
 
 }
 
 
-/* RESULTS */
+/* =====================================================
+   GENERATE NOTE
+   ===================================================== */
+
+.spcs-generate-note {
+
+    margin-top: 8px;
+
+    text-align: center;
+
+    color:
+        #64748b;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =====================================================
+   RESULTS HEADER
+   ===================================================== */
 
 .spcs-results-header {
 
@@ -720,36 +1377,73 @@
 
     justify-content: space-between;
 
-    gap: 10px;
-
-}
-
-.spcs-results-header h3 {
+    gap: 12px;
 
     margin-bottom: 18px;
 
 }
 
-.spcs-copy-all {
 
-    border: 1px solid var(--sp-border);
+.spcs-results-header
+.spcs-panel-heading {
 
-    background: #020617;
-
-    color: #cbd5e1;
-
-    border-radius: 7px;
-
-    padding: 7px 10px;
-
-    font-size: 11px;
-
-    cursor: pointer;
+    min-width: 0;
 
 }
 
 
-/* RESULT CARDS */
+.spcs-copy-all {
+
+    flex:
+        0
+        0
+        auto;
+
+    border:
+        1px solid
+        var(--sp-border);
+
+    background:
+        #020617;
+
+    color:
+        #cbd5e1;
+
+    border-radius: 7px;
+
+    padding:
+        8px
+        10px;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        border-color .15s ease,
+        color .15s ease;
+
+}
+
+
+.spcs-copy-all:hover {
+
+    border-color:
+        var(--sp-purple);
+
+    color:
+        #fff;
+
+}
+
+
+/* =====================================================
+   RESULT CARDS
+   ===================================================== */
 
 .spcs-result-card {
 
@@ -759,138 +1453,360 @@
 
     padding: 14px;
 
-    background: #020617;
+    background:
+        #020617;
 
-    border: 1px solid var(--sp-border);
+    border:
+        1px solid
+        var(--sp-border);
 
     border-radius: 10px;
 
+    transition:
+        border-color .15s ease;
+
 }
+
+
+.spcs-result-card:hover {
+
+    border-color:
+        #475569;
+
+}
+
 
 .spcs-result-title {
 
     margin-bottom: 8px;
 
-    color: #c084fc;
+    color:
+        var(--sp-purple-light);
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 800;
 
+    letter-spacing: .2px;
+
 }
+
 
 .spcs-result-content {
 
-    padding-right: 65px;
+    min-height: 25px;
 
-    color: #e2e8f0;
+    padding-right: 62px;
 
-    font-size: 14px;
+    color:
+        #e2e8f0;
 
-    line-height: 1.6;
+    font-size: 13px;
+
+    line-height: 1.65;
 
     white-space: pre-wrap;
 
-    min-height: 25px;
+    overflow-wrap: anywhere;
 
 }
+
+
+/* =====================================================
+   COPY BUTTON
+   ===================================================== */
 
 .spcs-copy {
 
     position: absolute;
 
-    top: 12px;
+    top: 11px;
 
-    right: 12px;
+    right: 11px;
 
-    border: 1px solid var(--sp-border);
+    border:
+        1px solid
+        var(--sp-border);
 
-    background: #1e293b;
+    background:
+        #1e293b;
 
-    color: #cbd5e1;
+    color:
+        #cbd5e1;
 
     border-radius: 6px;
 
-    padding: 5px 8px;
+    padding:
+        5px
+        8px;
 
-    font-size: 10px;
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 700;
 
     cursor: pointer;
+
+    transition:
+        border-color .15s ease,
+        color .15s ease,
+        background .15s ease;
 
 }
 
 
-/* ERROR */
+.spcs-copy:hover {
+
+    border-color:
+        var(--sp-purple);
+
+    color:
+        #fff;
+
+    background:
+        #334155;
+
+}
+
+
+/* =====================================================
+   ERROR
+   ===================================================== */
 
 .spcs-error {
 
     margin-top: 12px;
 
-    padding: 10px;
+    padding: 11px;
 
     border-radius: 8px;
 
-    background: rgba(239,68,68,.1);
+    background:
+        rgba(239, 68, 68, .10);
 
-    border: 1px solid rgba(239,68,68,.3);
+    border:
+        1px solid
+        rgba(239, 68, 68, .30);
 
-    color: #fca5a5;
+    color:
+        #fca5a5;
 
-    font-size: 12px;
+    font-size: 11px;
+
+    line-height: 1.5;
 
 }
 
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 .spcs-footer {
 
     display: flex;
 
+    align-items: center;
+
     justify-content: space-between;
 
-    gap: 10px;
+    gap: 12px;
 
     margin-top: 15px;
 
     padding-top: 14px;
 
-    border-top: 1px solid var(--sp-border);
+    border-top:
+        1px solid
+        var(--sp-border);
 
-    color: var(--sp-muted);
+    color:
+        var(--sp-muted);
 
-    font-size: 11px;
+    font-size: 10px;
+
+    line-height: 1.4;
 
 }
 
 
-/* MOBILE */
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
 @media (max-width: 760px) {
 
     #sp-creator-studio.spcs {
 
-        padding: 15px;
+        margin:
+            15px
+            0;
 
-        margin: 20px 0;
+        padding:
+            15px;
+
+        border-radius: 15px;
 
     }
+
+
+    .spcs-header {
+
+        padding:
+            8px
+            4px
+            20px;
+
+    }
+
 
     .spcs-header h2 {
 
-        font-size: 26px;
+        font-size: 27px;
+
+        letter-spacing:
+            -.4px;
 
     }
+
+
+    .spcs-header p {
+
+        font-size: 13px;
+
+        line-height: 1.55;
+
+    }
+
+
+    .spcs-privacy {
+
+        font-size: 10px;
+
+    }
+
+
+    .spcs-mode-selector {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .spcs-mode-btn {
+
+        min-height: 44px;
+
+    }
+
 
     .spcs-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
+
+        gap: 14px;
 
     }
 
+
+    .spcs-panel {
+
+        padding:
+            16px;
+
+    }
+
+
+    .spcs-results-header {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .spcs-copy-all {
+
+        padding:
+            8px
+            9px;
+
+    }
+
+
+    .spcs-result-content {
+
+        padding-right:
+            55px;
+
+        font-size:
+            13px;
+
+    }
+
+
     .spcs-footer {
 
-        flex-direction: column;
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    #sp-creator-studio.spcs {
+
+        padding:
+            12px;
+
+    }
+
+
+    .spcs-header h2 {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .spcs-panel {
+
+        padding:
+            14px;
+
+    }
+
+
+    .spcs-results-header {
+
+        gap:
+            7px;
+
+    }
+
+
+    .spcs-copy-all {
+
+        font-size:
+            9px;
+
+        padding:
+            7px
+            8px;
 
     }
 
