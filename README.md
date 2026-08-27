@@ -12,7 +12,7 @@ https://shortprompt.altervista.org/
 The tool is also available as a live GitHub Pages demo:
 
 👉 **GitHub Pages Demo:**  
-https://shortprompt-blip.github.io/REPOSITORY-NAME/
+https://shortprompt-blip.github.io/creator-studio-local-ai/
 
 ---
 
